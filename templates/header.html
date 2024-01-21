@@ -1,0 +1,23 @@
+{% load static %}
+<header>
+  <div class="container">
+    <div class="header-img">
+      <img src="{% static 'header_img.jpg' %}" alt="Header img" />
+   </div>
+
+    <div class="search-container">
+      <input type="text" class="input-field" placeholder="Search For Author"></input>
+      <button class="search-button"><box-icon name='search'></box-icon></button>
+    </div>
+
+    <div class="links">
+      <ul>
+        <li>
+            <a href="{% url 'library_app:signup' %}">Sign Up</a>
+            <a href="{% url 'library_app:login' %}">Log In</a>
+            <a href="{% url 'library_app:signup' %}">Sign Out</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>

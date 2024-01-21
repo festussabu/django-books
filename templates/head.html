@@ -1,0 +1,176 @@
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Book Site</title>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+<style>
+  /* footer */
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  footer .container {
+    background-color: #000000;
+    position: fixed;
+    z-index: 10;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+  }
+  footer .container .text {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff;
+    padding: 5px;
+    font-family: monospace;
+  }
+
+  /* header */
+  header .container {
+    background-color: #dfdfdf;
+    height: 85px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+  }
+  header .container .header-img img {
+    height: 4.5rem;
+    width: 4.5rem;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 1rem;
+  }
+  header .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  header .search-container .input-field {
+    min-width: 20rem;
+    font-size: 18px;
+    padding: 12px;
+    outline: none;
+  }
+  header .search-container .search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  header .container .links ul li {
+    list-style: none;
+  }
+  header .container .links ul li a {
+    padding: 6px;
+    text-decoration: none;
+    font-size: 16px;
+    font-family: monospace;
+    color: black;
+    border-right: 1px solid;
+  }
+  header .container .links ul li a:last-child {
+    margin-right: 10px;
+    border-right: none;
+  }
+  /* sign up page */
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: monospace;
+    width: 100%;
+    background-image: linear-gradient(to right, rgb(216, 149, 149), yellow);
+  }
+  main .container {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  }
+  main .container form {
+    width: 30rem;
+    height: 60%;
+    padding: 10px;
+  }
+  main .container form .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  main .container form h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  main .container form .form-container label {
+    font-size: 20px;
+  }
+  main .container form .form-container input {
+    padding: 12px 20px;
+    outline: none;
+    font-size: 18px;
+  }
+  main .container form button {
+    padding: 12px 20px;
+    margin-top: 2rem;
+    cursor: pointer;
+    width: 100%;
+    background-color: rgb(4, 132, 4);
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+  /* login page */
+  .login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: monospace;
+    width: 100%;
+    background-image: linear-gradient(to right, rgb(216, 149, 149), yellow);
+  }
+  .login-page .login-container {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    width: 30rem;
+    height: 42%;
+    padding: 10px;
+  }
+  .login-page .login-container h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .login-page .login-container form .login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .login-page .login-container form .login label {
+    font-size: 20px;
+  }
+  .login-page .login-container form .login input {
+    padding: 12px 20px;
+    outline: none;
+    font-size: 18px;
+  }
+  .login-page .login-container form button {
+    padding: 12px 20px;
+    margin-top: 2rem;
+    cursor: pointer;
+    width: 100%;
+    background-color: rgb(4, 132, 4);
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+  }
+</style>

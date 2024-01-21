@@ -1,0 +1,25 @@
+<!-- head -->
+{% include "head.html" %}
+
+<main>
+  <div class="container">
+    <form action="" method="post">
+      {% csrf_token %}
+      <h1>Sign Up</h1>
+      <div class="form-container">
+        <label>Full Name</label>
+        <input type="text" placeholder="Full Name" />
+        <label>Email</label>
+        <input type="email" placeholder="Email" />
+        <label>Phone Number</label>
+        <input type="number" placeholder="number" />
+        <label>Password</label>
+        <input type="password" placeholder="Password" />
+      </div>
+      <button type="submit">SUBMIT</button>
+    </form>
+  </div>
+</main>
+
+<!-- footer -->
+{% include "footer.html" %}
