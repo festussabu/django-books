@@ -173,4 +173,46 @@
     font-weight: bold;
     color: white;
   }
+
+  section .card-container {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 0.7rem;
+    grid-row-gap: 1rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    margin-bottom: 7rem;
+  }
+  section .card-container .card {
+    border: 1px solid #000;
+    padding: 10px;
+  }
+  section .card-container .card p {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  section .card-container .card p:last-child {
+    font-weight: normal;
+  }
+  section .card-container .card h1 {
+    font-size: 2rem;
+  }
+  section .card-container .card .author {
+    padding: 5px 2px;
+    color: #fff;
+  }
+  section .card-container .card .author span {
+    background-color: green;
+    padding: 5px 10px;
+  }
+  section .card-container .card .cash {
+    padding: 5px 2px;
+    color: #fff;
+  }
+  section .card-container .card .cash span {
+    background-color: red;
+    padding: 5px 10px;
+  }
 </style>
