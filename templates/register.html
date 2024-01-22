@@ -5,19 +5,22 @@
   <div class="container">
     <form action="" method="post">
       {% csrf_token %}
-      <h1>Sign Up</h1>
+      <h1>LET'S GO...</h1>
       <div class="form-container">
         <label>Full Name</label>
-        <input type="text" placeholder="Full Name" />
+        <input type="text" placeholder="Full Name" name="username" />
         <label>Email</label>
-        <input type="email" placeholder="Email" />
+        <input type="email" placeholder="Email" name="email" />
         <label>Phone Number</label>
         <input type="number" placeholder="number" />
         <label>Password</label>
-        <input type="password" placeholder="Password" />
+        <input type="password" placeholder="Password" name="password" />
       </div>
       <button type="submit">SUBMIT</button>
     </form>
+    {% for message in messages %}
+    <h1 style="color: red; text-align: center">{{message}}</h1>
+    {% endfor %}
   </div>
 </main>
 

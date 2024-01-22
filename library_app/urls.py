@@ -4,7 +4,6 @@ from . import views
 app_name = 'library_app'
 
 urlpatterns = [
-  path('', views.index),
-  path('signup/', views.sign_up, name='signup'),
-  path('login/', views.log_in, name='login'),
+  path('index/', views.index, name='index'),
+  path('', views.register, name='register'),
 ]
