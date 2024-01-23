@@ -6,10 +6,15 @@
   <div class="card-container">
     {% for i in objects %}
     <div class="card">
-      <h1>{{i.Book_Name}}</h1>
-      <p class="author"><span>{{i.Author}}</span></p>
-      <p class="cash"><span>{{i.Price}}</span></p>
+      <h1>Name: {{i.Book_Name}}</h1>
+      <p class="author"><span>Author: {{i.Author}}</span></p>
+      <p class="cash"><span>Price: {{i.Price}}</span></p>
       <p>{{ i.Description }}</p>
+      <button>
+        <a href="{% url 'library_app:delete' i.id %}"
+          ><box-icon name="trash"></box-icon
+        ></a>
+      </button>
     </div>
     {% endfor %}
   </div>

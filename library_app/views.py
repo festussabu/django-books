@@ -58,4 +58,23 @@ def log(request):
 
 # create user
 def create_book(request):
+
+    if request.method == 'POST':
+        book_name = request.POST.get('book')
+        author = request.POST.get('author')
+        price = request.POST.get('price')
+        description = request.POST.get('description')
+
+        if book_name and author and price:
+            obj = Book.objects.create(Book_Name = book_name, Author = author, Price = price, Description= description)
+            obj.save()
+        else:
+            return render(request, 'create_book.html')
+
+    
     return render(request, 'create_book.html')
+
+def delete(request, id):
+    delete_item = Book.objects.filter(id = id)
+    delete_item.delete()
+    return redirect('library_app:index')
