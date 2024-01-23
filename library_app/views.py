@@ -1,12 +1,24 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate
 from django.contrib import messages
-from django.contrib.auth.models import User
+from .models import registration_table, Book
+# for islowercase.. removing case sensivity
+from django.db.models import Q
 
 # Create your views here.
 def index(request):
-  return render(request, 'index.html')
+    if request.method == 'POST':
+        # input value
+        author = request.POST.get('author_name')
+        if author:
+            obj = Book.objects.filter(Q(Author__iexact=author))
+            return render(request, 'index.html', {"objects":obj})
+        else:
+            obj = Book.objects.all()
+            return render(request, 'index.html', {"objects":obj})
+    obj = Book.objects.all()
+    return render(request, 'index.html', {"objects":obj})
 
+# registration
 def register(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -16,24 +28,34 @@ def register(request):
         if not username:
             messages.error(request, 'Username is required.')
             return redirect('library_app:register')
-        if User.objects.filter(username=username).exists():
+        if registration_table.objects.filter(username=username).exists():
             messages.error(request, 'Username Already Exists..')
             return redirect('library_app:register')
-        elif User.objects.filter(email=email).exists():
+        elif registration_table.objects.filter(email=email).exists():
             messages.error(request, 'Email Already Exists..')
             return redirect('library_app:register')
         else:
-            user = User.objects.create_user(username=username, email=email, password=password, is_active=True)
-            
-            authenticated_user = authenticate(username=username, password=password)
-            
-            if authenticated_user is not None:
-                login(request, authenticated_user)
-                messages.success(request, 'Successfully Logged In...')
-                return redirect('library_app:index')
+            obj = registration_table.objects.create(username=username, email=email, password=password)
+            obj.save()
+            if obj:
+                return redirect('library_app:login')
             else:
                 messages.error(request, 'Authentication failed.')
                 return redirect('library_app:register')
-
     return render(request, 'register.html')
 
+# login
+def log(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        user = registration_table.objects.filter(email=email, password=password)
+        if user:
+            return redirect('library_app:index')
+        else:
+            messages.error(request, 'Email or Password is invalid.')
+    return render(request, 'login.html')
+
+# create user
+def create_book(request):
+    return render(request, 'create_book.html')

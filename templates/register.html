@@ -17,6 +17,9 @@
         <input type="password" placeholder="Password" name="password" />
       </div>
       <button type="submit">SUBMIT</button>
+      <h3>
+        <a href="{% url 'library_app:login' %}">Log In</a>
+      </h3>
     </form>
     {% for message in messages %}
     <h1 style="color: red; text-align: center">{{message}}</h1>

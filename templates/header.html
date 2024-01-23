@@ -5,17 +5,22 @@
       <img src="{% static 'header_img.jpg' %}" alt="Header img" />
    </div>
 
-    <div class="search-container">
-      <input type="text" class="input-field" placeholder="Search For Author"></input>
-      <button class="search-button"><box-icon name='search'></box-icon></button>
-    </div>
+    <form action="" method="post">
+      {% csrf_token %}
+      <div class="search-container">
+        <input type="text" class="input-field" placeholder="Search For Author" name="author_name"></input>
+        <button class="search-button" type="submit"><box-icon name='search'></box-icon></button>
+      </div>
+    </form>
 
     <div class="links">
       <ul>
         <li>
-            <a href="{% url 'library_app:register' %}">Sign Out</a>
+          <a href="{% url 'library_app:create_book' %}">Create Book</a>
+          <a href="{% url 'library_app:register' %}">Sign Out</a>
         </li>
       </ul>
     </div>
   </div>
 </header>
+
